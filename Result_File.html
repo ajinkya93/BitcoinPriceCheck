@@ -1,0 +1,73 @@
+<html><head><script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<style>
+	 canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 800px;
+}</style>
+</head><body>
+<center>Last updated at Sep 27, 2017 23:55:00 UTC</center><br><span class="badge badge-pill badge-primary"><h4 >Bitcoin's value (USD) : 4206.9713</h4></span><span class="badge badge-pill badge-primary float-right m-2" ><h4>Bitcoin's value (INR) : 275703.4271</h4></span>
+<div style="width:75%;">
+<center><canvas id="myChart" margin-left="80px" ></canvas></center>
+</div>
+<script>
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+type:'line',
+data: {
+labels: ["2017-08-09","2017-08-16","2017-08-23","2017-08-30","2017-09-06","2017-09-13","2017-09-20","2017-09-27"],
+ datasets: [
+{ 
+ label: "Bitcoin Rates in USD",
+ yAxisID: 'A',
+ borderColor: "rgb(255, 0, 0)",
+ data: [3377.5438,4425.2963,4191.2175,4630.7275,4626.72,3874.2588,3858.0888,4206.9713],
+fill:false,
+ },{
+ label: "Bitcoin Rates in INR",
+ yAxisID: 'B',
+ borderColor: "rgb(0, 0, 255)",
+ data: [215820.3253,283252.1516,268309.1636,296297.1019,296189.6443,248437.2299,248055.8125,275703.4271],
+fill:false,
+ }
+]
+},
+options: {
+   scales: {
+ xAxes: [{
+			scaleLabel: {
+			display: true,
+     	labelString: 'Dates from the past 7 weeks and the current week'
+      	}
+ }],
+     yAxes: [{
+        id: 'A',
+        type: 'linear',
+        position: 'left',
+			scaleLabel: {
+			display: true,
+     	labelString: 'Value of Bitcoin in USD'
+      	}
+      }, {
+        id: 'B',
+        type: 'linear',
+        position: 'right',
+			scaleLabel: {
+			display: true,
+     	labelString: 'Value of Bitcoin in INR'
+      	}
+      }]
+    }
+  }
+});
+</script>
+Disclaimer: This data was produced from the CoinDesk Bitcoin Price Index (USD). Non-USD currency data converted using hourly conversion rate from openexchangerates.org
+<br><script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</body>
+<footer><p> <center> Powered by <a href="https://www.coindesk.com/price">CoinDesk</a></center></p></footer></html>
